@@ -12,6 +12,17 @@
 //   4
 //   buzz
 
-function fizzBuzz(n) {}
+function fizzBuzz(n) {
+  const fizz = (k) => k % 3 === 0;
+  const buzz = (k) => k % 5 === 0;
+  const fizzAndBuzz = (k) => fizz(k) && buzz(k);
+
+  for (let i = 1; i <= n; i++) {
+    if (fizzAndBuzz(i)) console.log("fizzbuzz");
+    else if (fizz(i)) console.log("fizz");
+    else if (buzz(i)) console.log("buzz");
+    else console.log(i);
+  }
+}
 
 module.exports = fizzBuzz;
