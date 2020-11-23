@@ -62,7 +62,7 @@ function matrix(n) {
     startCol++;
   }
 
-  console.log(mat);
+  return mat;
 }
 
 matrix(6);
