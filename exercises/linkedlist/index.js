@@ -15,18 +15,14 @@ class LinkedList {
     this.numNodes = 0;
   }
 
+  /**
+   *
+   * Setters
+   *
+   */
   insertFirst(data) {
-    const newFirst = new Node(data, null);
+    this.head = new Node(data, this.head);
     this.numNodes++;
-
-    if (!this.head) {
-      this.head = newFirst;
-      return;
-    }
-
-    const oldFirst = this.head;
-    this.head = newFirst;
-    newFirst.next = oldFirst;
   }
 
   insertLast(data) {
@@ -69,6 +65,11 @@ class LinkedList {
     newNode.next = afterIndex;
   }
 
+  /**
+   *
+   * Getters
+   *
+   */
   size() {
     return this.numNodes;
   }
@@ -102,6 +103,11 @@ class LinkedList {
     }
   }
 
+  /**
+   *
+   * Removers
+   *
+   */
   removeLast() {
     if (this.numNodes <= 1) {
       this.removeFirst();
@@ -135,6 +141,11 @@ class LinkedList {
     this.numNodes = 0;
   }
 
+  /**
+   *
+   * Transformers
+   *
+   */
   forEach(fn) {
     let node = this.head;
     let counter = 0;
